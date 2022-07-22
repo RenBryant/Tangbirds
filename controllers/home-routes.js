@@ -6,12 +6,21 @@ router.get('/', async (req, res) => {
   try {
 
     const postData = await Post.findAll({
-      include: [User],
+      attributes: ["id", "title", "body", "date_created"],
+      include: [{
+        model: Comment,
+        attributes: ["id", "post_id", "comment_text", "user_id"],
+      },
+      {
+        model: User,
+        attributes: ["username"],
+      }
+      ],
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('all-posts', { posts });
+    res.render('all-posts', { posts, loggedIn: req.session.loggedIn });
   } catch (err) { res.status(500).json(err);
   }
 });
@@ -35,7 +44,7 @@ router.get('/post/:id', async (req, res) => {
 
       const post = postData.get({ plain: true });
 
-      res.render('single-post', { post });
+      res.render('single-post', { post, loggedIn: req.session.loggedIn });
     } else {
       res.status(404).end();
     }
