@@ -8,7 +8,6 @@
   * [Links](#links)  
   * [Usage](#usage)
   * [Technologies](#technologies)
-  * [API](#api)
   * [Repo Data](#repo)
   
 
@@ -56,51 +55,36 @@ To install the necessary dependencies, run the following command:
 npm i
 ```
 
-in the package.json file for the root folder, the client folder, and the server folder.
+in the package.json file which is located in the root directory.
 
 ### Running the application
 
-Use the command npm run watch in the server folder and npm start in the client folder!
+Use the command node server.js in the root folder!
 
 
 ## Links
-![Landing Page](./Develop/client/public/images/BookSearchStart.jpg)
-![Book Search Page](./Develop/client/public/images/BookSearchLogin.jpg)
-![Saved Books Page](./Develop/client/public/images/BookSearchSavedBooks.jpg)
-	[Deployed Application](https://renbryant.github.io/MooPlayer/)
+![Landing Page](./public/images/Tech_Blog.jpg)
+	[Deployed Application](https://git.heroku.com/salty-waters-22892.git)
 
 
 ## Usage
-In this app the user is able to sing up and log in to their own specific credentials. Their password is hashed using bcrypt and JWT, so no need to worry about security. Then the user is able to search for whatever book they want using our search bar that grabs information from the API. The user is able to save books that they like to their profile, and then also delete them when they view their profile. And of course the user is also able to log out of their account, and then log back in whenever they want.
+In this app the user is able to sign up and log in to their own personal and private account. Then the user will be able to make posts, comment on posts, and delete posts.
 
 
 ## Technologies
-The front end of this application:
+The application contains the following technologies:
 
 ```
-react
-apollo client
-jwt-decode
-graphql
-bootstrap
-```
-
-The back end of this application:
-
-```
-mongoose
-express
 bcrypt
-apollo-server-express
-jwt
-nodemon
-graphql
+express
+dotenv
+mysql2
+express-handlebars
+express-session
+connect-session-sequeilize
+sequelize
+
 ```
-
-
-## API
-This project uses the Google Books API search engine built with a RESTful API, and refactors it to be a GraphQL API built with an Apollo Server.
-[Link to Google Books API website](https://developers.google.com/books)
 
 
 ## Repo Data
