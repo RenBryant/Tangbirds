@@ -9,7 +9,7 @@ router.get('/', withAuth, async (req, res) => {
       where: {
         userId: req.session.userId
       },
-      attributes: ["id", "title", "body", "user_id", "date_created"],
+      attributes: ["id", "title", "body", "user_id"],
       include: [
         {
           model: User,
